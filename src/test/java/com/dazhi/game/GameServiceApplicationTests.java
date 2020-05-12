@@ -44,9 +44,9 @@ class GameServiceApplicationTests {
 	void updateTest() {
 		User user = new User();
 		user.setId(1260097727314231298L);
-		// user.setVersion(2);
+		user.setVersion(2);
 		user.setActive(false);
-		user.setUsername("lalla");
+		user.setUsername("qqq");
 		user.setPassword("123");
 		userMapper.updateById(user);
 	}

@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor;
 @Configuration
 public class VersionConfig {
 	@Bean
-	public OptimisticLockerInterceptor VersionConfig() {
+	public OptimisticLockerInterceptor optimisticLockerInterceptor() {
 		return new OptimisticLockerInterceptor();
 	}
 }
