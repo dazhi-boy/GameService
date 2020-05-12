@@ -18,7 +18,7 @@ public class UserController {
 		User user = new User();
 		// user.setId(5L);
 		user.setVersion(2);
-		user.setActive(true);
+		user.setFlag(false);
 		user.setUsername("zhangsan");
 		user.setPassword("123456");
 		userService.save(user);

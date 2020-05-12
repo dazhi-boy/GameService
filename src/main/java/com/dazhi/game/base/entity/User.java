@@ -10,7 +10,7 @@ public class User {
 	@Version
     private Integer version;
 
-    private Boolean active;
+    private Boolean flag;
 
     private String username;
 
@@ -32,15 +32,15 @@ public class User {
 		this.version = version;
 	}
 
-	public Boolean getActive() {
-        return active;
-    }
+    public Boolean getFlag() {
+		return flag;
+	}
 
-    public void setActive(Boolean active) {
-        this.active = active;
-    }
+	public void setFlag(Boolean flag) {
+		this.flag = flag;
+	}
 
-    public String getUsername() {
+	public String getUsername() {
         return username;
     }
 

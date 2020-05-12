@@ -45,7 +45,7 @@ class GameServiceApplicationTests {
 		User user = new User();
 		user.setId(1260097727314231298L);
 		user.setVersion(2);
-		user.setActive(false);
+		user.setFlag(true);
 		user.setUsername("qqq");
 		user.setPassword("123");
 		userMapper.updateById(user);
@@ -56,7 +56,7 @@ class GameServiceApplicationTests {
 		User user = new User();
 		// user.setId(6L);
 		// user.setVersion(1);
-		user.setActive(true);
+		user.setFlag(true);
 		user.setUsername("zhangsan");
 		user.setPassword("123456");
 		// userService.save(user);
