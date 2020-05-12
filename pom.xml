@@ -27,19 +27,23 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-websocket</artifactId>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>2.1.2</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
 		<dependency>
 		    <groupId>com.baomidou</groupId>
-		    <artifactId>mybatis-plus-boot-starter</artifactId>
-		    <version>3.2.0</version>
-		</dependency>
-		<!-- pagehelper 解决掉jar包冲突 -->
+		    <artifactId>mybatis-plus</artifactId>
+		    <version>2.1.8</version>
+		</dependency> -->
 		<dependency>
+	        <groupId>com.baomidou</groupId>
+	        <artifactId>mybatis-plus-boot-starter</artifactId>
+	        <version>3.3.1.tmp</version>
+	    </dependency>
+		<!-- pagehelper 解决掉jar包冲突 -->
+		<!-- <dependency>
 			<groupId>com.github.pagehelper</groupId>
 			<artifactId>pagehelper-spring-boot-starter</artifactId>
 			<version>1.2.5</version>
@@ -49,7 +53,7 @@
 					<artifactId>mybatis</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
+		</dependency> -->
 		<!-- https://mvnrepository.com/artifact/org.mybatis.generator/mybatis-generator-core -->
 		<dependency>
 		    <groupId>org.mybatis.generator</groupId>
@@ -97,6 +101,20 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
+        
+        
+        <dependency>
+		    <groupId> org.junit.jupiter</groupId>
+		    <artifactId>junit-jupiter-engine</artifactId>
+		    <version>5.1.0</version>
+		    <scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.junit.platform</groupId>
+		    <artifactId>junit-platform-launcher</artifactId>
+		    <version> 1.1.0 </version>
+		    <scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>

@@ -1,14 +1,13 @@
 package com.dazhi.game.base.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.Version;
 
+//import com.baomidou.mybatisplus.annotation.Version;
+
 public class User {
-	@TableId(value = "seq", type = IdType.AUTO)
     private Long id;
     
-    @Version
+	@Version
     private Integer version;
 
     private Boolean active;
@@ -25,7 +24,15 @@ public class User {
         this.id = id;
     }
 
-    public Boolean getActive() {
+	public Integer getVersion() {
+		return version;
+	}
+
+	public void setVersion(Integer version) {
+		this.version = version;
+	}
+
+	public Boolean getActive() {
         return active;
     }
 

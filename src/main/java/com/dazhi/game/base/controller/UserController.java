@@ -1,10 +1,7 @@
 package com.dazhi.game.base.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dazhi.game.base.entity.User;
@@ -16,9 +13,15 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	@PostMapping("user")
-	public Result save(User user) {
-		boolean res = userService.save(user);
-		return Result.ok("OK",res);
+	@GetMapping("user")
+	public Result save() {
+		User user = new User();
+		// user.setId(5L);
+		user.setVersion(2);
+		user.setActive(true);
+		user.setUsername("zhangsan");
+		user.setPassword("123456");
+		userService.save(user);
+		return Result.ok("OK");
 	}
 }

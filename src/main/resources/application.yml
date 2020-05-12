@@ -1,24 +1,26 @@
 spring:
   datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initialization-mode: embedded
+    schema: classpath:sql/schema.sql
+    data: classpath:sql/data.sql
     url: jdbc:mysql://localhost:3306/gameservice?characterEncoding=UTF8&useSSL=false&allowMultiQueries=true&allowPublicKeyRetrieval=true&serverTimezone=UTC
     username: root
     password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
     platform: mysql
     
-    initialization-mode: always
-    schema:
-    - classpath:sql/schema.sql
-    data:
-    - classpath:sql/data.sql
-
   devtools:
     restart:
       exclude:  static/**,public/**
       enabled:  true
       
-mybatis:  mapper-locations: classpath:mapper/*.xml
       
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+      
+# Logger Config
+#logging:
+#  level:
+#    com.baomidou.mybatisplus.samples.quickstart: debug
+    
