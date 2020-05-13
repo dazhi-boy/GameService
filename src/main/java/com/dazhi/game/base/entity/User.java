@@ -2,50 +2,19 @@ package com.dazhi.game.base.entity;
 
 import javax.validation.constraints.NotNull;
 
-import com.baomidou.mybatisplus.annotation.Version;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.dazhi.game.common.BaseEntity;
 
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-//import com.baomidou.mybatisplus.annotation.Version;
-
-public class User {
-    private Long id;
-    
-	@Version
-    private Integer version;
-	@JsonIgnore
-    private Boolean flag;
+@ApiModel(value = "user", description = "用户参数类")
+public class User extends BaseEntity {
 	@NotNull
 	@ApiModelProperty(value = "用户名", example = "张三", required = true)
     private String username;
 	@NotNull
 	@ApiModelProperty(value = "密码", example = "123", required = true)
     private String password;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-	public Integer getVersion() {
-		return version;
-	}
-
-	public void setVersion(Integer version) {
-		this.version = version;
-	}
-
-    public Boolean getFlag() {
-		return flag;
-	}
-
-	public void setFlag(Boolean flag) {
-		this.flag = flag;
-	}
 
 	public String getUsername() {
         return username;

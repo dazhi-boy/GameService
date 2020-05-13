@@ -1,9 +1,12 @@
 package com.dazhi.game.base.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,16 +24,25 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	@ApiOperation(value = "更新用户")
+	@ApiOperation(value = "添加用户")
 	@PostMapping("/add")
-	public Result save(User user) {
-		// user.setId(5L);
-		// user.setVersion(2);
-		// user.setFlag(false);
-		user.setUsername("zhangsan");
-		user.setPassword("123456");
-		userService.save(user);
-		return Result.ok("OK");
+	public Result save(@RequestBody User user) {
+		boolean res = userService.save(user);
+		return Result.ok("OK", res);
+	}
+
+	@ApiOperation(value = "更新用户")
+	@PutMapping
+	public Result update(@RequestBody User user) {
+		boolean res = userService.updateById(user);
+		return Result.ok("OK", res);
+	}
+
+	@ApiOperation(value = "通过id删除指定用户")
+	@DeleteMapping("/{id}")
+	public Result delete(@PathVariable("id") Long id) {
+		boolean res = userService.removeById(id);
+		return Result.ok("OK", res);
 	}
 
 	@ApiOperation(value = "通过id获取指定用户")
