@@ -1,5 +1,7 @@
 package com.dazhi.game.base.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -51,6 +53,14 @@ public class UserController {
 		User user = userService.getById(id);
 		Result<User> result = Result.ok("OK");
 		result.setData(user);
+		return result;
+	}
+	@ApiOperation(value = "获取用户列表")
+	@GetMapping
+	public Result<List<User>> list(){
+		List<User> list = userService.list();
+		Result<List<User>> result = Result.ok("OK");
+		result.setData(list);
 		return result;
 	}
 }
