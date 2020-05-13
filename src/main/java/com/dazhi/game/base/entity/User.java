@@ -1,6 +1,11 @@
 package com.dazhi.game.base.entity;
 
+import javax.validation.constraints.NotNull;
+
 import com.baomidou.mybatisplus.annotation.Version;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import io.swagger.annotations.ApiModelProperty;
 
 //import com.baomidou.mybatisplus.annotation.Version;
 
@@ -9,11 +14,13 @@ public class User {
     
 	@Version
     private Integer version;
-
+	@JsonIgnore
     private Boolean flag;
-
+	@NotNull
+	@ApiModelProperty(value = "用户名", example = "张三", required = true)
     private String username;
-
+	@NotNull
+	@ApiModelProperty(value = "密码", example = "123", required = true)
     private String password;
 
     public Long getId() {

@@ -9,8 +9,8 @@ CREATE TABLE `organization` (
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
  `id` bigint(20) NOT NULL PRIMARY KEY AUTO_INCREMENT,
- `version` bigint(20) NOT NULL,
- `flag` bit(1) NOT NULL,
+ `version` bigint(20),
+ `flag` bit(1),
  `username` varchar(30) NOT NULL,
  `password` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

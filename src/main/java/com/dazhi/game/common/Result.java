@@ -1,9 +1,9 @@
 package com.dazhi.game.common;
 
-public class Result {
+public class Result<T> {
 	private Integer code;
 	private String msg;
-	private Object data;
+	private T data;
 
 	public static Result build() {
 		return new Result();
@@ -28,7 +28,7 @@ public class Result {
 	private Result() {
 	}
 
-	private Result(Integer status, String msg, Object data) {
+	private Result(Integer status, String msg, T data) {
 		this.code = status;
 		this.msg = msg;
 		this.data = data;
@@ -50,11 +50,11 @@ public class Result {
 		this.msg = msg;
 	}
 
-	public Object getData() {
+	public T getData() {
 		return data;
 	}
 
-	public void setData(Object data) {
+	public void setData(T data) {
 		this.data = data;
 	}
 }
