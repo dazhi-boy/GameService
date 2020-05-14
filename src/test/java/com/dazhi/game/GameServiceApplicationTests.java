@@ -5,47 +5,27 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import com.dazhi.game.base.entity.User;
 import com.dazhi.game.base.mapper.UserMapper;
-import com.dazhi.game.base.service.UserService;
-import com.dazhi.game.base.service.UserTest;
+import com.dazhi.game.base.service.IUserService;
 
-@RunWith(SpringRunner.class)
+//@RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class GameServiceApplicationTests {
 
 	@Resource
-	UserService userService;
-
-	@Resource
-	UserTest userTest;
+	IUserService userService;
 
 	@Resource
 	UserMapper userMapper;
-
-	@Test
-	void serviceTest() {
-		List<User> selectList = userTest.list();
-		System.out.println(selectList);
-		// User user = new User();
-		// // user.setId(6L);
-		// user.setVersion(2);
-		// user.setActive(true);
-		// user.setUsername("zhangsan");
-		// user.setPassword("123456");
-		// userService.save(user);
-	}
 
 	@Test
 	void updateTest() {
 		User user = new User();
 		user.setId(1260097727314231298L);
 		user.setVersion(2);
-		user.setFlag(true);
 		user.setUsername("qqq");
 		user.setPassword("123");
 		userMapper.updateById(user);
@@ -56,7 +36,6 @@ class GameServiceApplicationTests {
 		User user = new User();
 		// user.setId(6L);
 		// user.setVersion(1);
-		user.setFlag(true);
 		user.setUsername("zhangsan");
 		user.setPassword("123456");
 		// userService.save(user);

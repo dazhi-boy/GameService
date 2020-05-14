@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.dazhi.game.base.entity.User;
-import com.dazhi.game.base.service.UserService;
+import com.dazhi.game.base.service.IUserService;
 import com.dazhi.game.common.Result;
 
 import io.swagger.annotations.Api;
@@ -24,7 +24,7 @@ import io.swagger.annotations.ApiOperation;
 @Api(value = "/user", tags = "UserController", description = "用户管理接口")
 public class UserController {
 	@Autowired
-	UserService userService;
+	IUserService userService;
 	
 	@ApiOperation(value = "添加用户")
 	@PostMapping("/add")

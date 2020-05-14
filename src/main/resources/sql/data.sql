@@ -1,5 +1,5 @@
 /*mock data***/
-INSERT INTO organization (company_name, active) 
+INSERT INTO user (username, password) 
 VALUES 
-('JDBC IBM', true),
-('JDBC MS', true);
+('admin', '123'),
+('password', '123');

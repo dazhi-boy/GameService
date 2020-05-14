@@ -10,7 +10,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.optimize.JsqlParser
 
 @EnableTransactionManagement
 @Configuration
-@MapperScan("com.dazhi.game.base.mapper")
+@MapperScan("com.dazhi.game.*.mapper")
 public class MybatisPlusConfig {
 	@Bean
 	public PaginationInterceptor paginationInterceptor() {

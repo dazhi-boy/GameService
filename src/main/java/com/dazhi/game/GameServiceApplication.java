@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.dazhi.game.base.mapper")
+@MapperScan("com.dazhi.game.*.mapper")
 public class GameServiceApplication {
 
 	public static void main(String[] args) {
