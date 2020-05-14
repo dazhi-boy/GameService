@@ -1,7 +1,5 @@
 package com.dazhi.game.base.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.dazhi.game.base.entity.User;
 import com.dazhi.game.base.service.UserService;
 import com.dazhi.game.common.Result;
@@ -57,10 +57,12 @@ public class UserController {
 	}
 	@ApiOperation(value = "获取用户列表")
 	@GetMapping
-	public Result<List<User>> list(){
-		List<User> list = userService.list();
-		Result<List<User>> result = Result.ok("OK");
-		result.setData(list);
+	public Result<IPage<User>> list() {
+		IPage<User> page = new Page<>();
+		IPage<User> userPage = userService.page(page);
+		// List<User> list = userService.list();
+		Result<IPage<User>> result = Result.ok("OK");
+		result.setData(userPage);
 		return result;
 	}
 }
