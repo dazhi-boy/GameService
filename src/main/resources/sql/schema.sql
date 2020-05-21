@@ -8,6 +8,15 @@ CREATE TABLE `user` (
  `password` varchar(30) NOT NULL COMMENT '密码'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT '用户表';
 
+-- 角色表
+DROP TABLE IF EXISTS `role`;
+CREATE TABLE `role` (
+ `id` bigint(20) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+ `version` bigint(20) NOT NULL DEFAULT 0,
+ `del_time` varchar(30),
+ `name` varchar(30) NOT NULL COMMENT '角色名'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT '用户表';
+
 -- 商品表
 DROP TABLE IF EXISTS `goods`;
 CREATE TABLE `goods` (

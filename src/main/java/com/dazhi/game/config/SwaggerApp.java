@@ -25,7 +25,7 @@ public class SwaggerApp {
 	@Bean
 	public Docket createRestApi() {// 创建API基本信息
 		return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select() //
-				.apis(basePackage("com.dazhi.game.base.controller" + splitor + "com.dazhi.game.shop.controller")) //
+				.apis(basePackage("com.dazhi.game.base.controller" + splitor + "com.dazhi.game.shop.controller" + splitor + "com.dazhi.game.common")) //
 				.paths(PathSelectors.any())
 				.build();
 	}

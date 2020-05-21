@@ -114,7 +114,8 @@ public class CodeGenerator {
 		// strategy.setEntityLombokModel(true);
 		strategy.setRestControllerStyle(true);
 		// 公共父类
-		// strategy.setSuperControllerClass("你自己的父类控制器,没有就不用设置!");
+		strategy.setSuperControllerClass("com.dazhi.game.common.BaseController<T>");
+		// strategy.setSuperControllerClass(BaseController.class);
 		// 写于父类中的公共字段
 		strategy.setSuperEntityColumns("id", "version", "del_time");
 		strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
