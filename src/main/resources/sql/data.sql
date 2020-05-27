@@ -20,10 +20,14 @@ VALUES
 
 
 
-INSERT INTO shop_product (company_id, category_id, title, description) 
+INSERT INTO shop_product (company_id, category_id, title, description,cover) 
 VALUES 
-(1, 1, '油菜花', '有机油菜花'),
-(1, 1, '黄花', '有机黄花');
+(1, 1, '油菜花', '有机油菜花','/img/1/a1.jpg'),
+(1, 1, '黄花菜', '有机黄花菜','/img/1/a2.jpg'),
+(1, 1, '大白菜', '有机大白菜','/img/1/a3.jpg'),
+(1, 1, '金针菇', '有机金针菇','/img/1/a1.jpg'),
+(1, 1, '胡萝卜', '有机胡萝卜','/img/1/a2.jpg'),
+(1, 1, '长山药', '有机长山药','/img/1/a3.jpg');
 
 
 
