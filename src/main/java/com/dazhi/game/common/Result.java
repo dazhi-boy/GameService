@@ -28,7 +28,12 @@ public class Result<T> {
 	private Result() {
 	}
 
-	private Result(Integer status, String msg, T data) {
+    public Result(Integer status, String msg) {
+        this.code = status;
+        this.msg = msg;
+    }
+
+    public Result(Integer status, String msg, T data) {
 		this.code = status;
 		this.msg = msg;
 		this.data = data;

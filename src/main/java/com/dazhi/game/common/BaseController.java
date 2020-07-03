@@ -1,5 +1,7 @@
 package com.dazhi.game.common;
 
+import javax.validation.Valid;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,7 +24,7 @@ public class BaseController<T> {
 
 	@ApiOperation(value = "添加")
 	@PostMapping("/add")
-	public Result save(@RequestBody T t) {
+    public Result save(@RequestBody @Valid T t) {
 		boolean res = iService.save(t);
 		return Result.ok("OK", res);
 	}
