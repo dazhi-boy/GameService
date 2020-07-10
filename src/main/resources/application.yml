@@ -16,27 +16,30 @@ spring:
       exclude:  static/**,public/**,img/**
       enabled:  true
       
-#  redis:
-#    cluster:
-#      nodes:
-#      - 127.0.0.1 6380
-#      - 127.0.0.1 6381
-#      - 127.0.0.1 6382
-#    password: root
-#    ### Redis数据库索引(默认为0) 
-#    database: 0
-#    ### 连接超时时间（毫秒） 
-#    timeout: 60000
-#    sentinel:
-#      master: mymaster
-#      nodes:
-#      - 127.0.0.1 26379
-#      - 127.0.0.1 26479
-#      - 127.0.0.1 26579
-#      password: root
+  redis:
+    client-name: redis0
+    database: 0
+    timeout: 3000
+    sentinel:
+      master: mymaster
+      nodes:
+      - 192.168.2.121:26381
+      - 192.168.2.121:26382
+    lettuce:
+      pool:
+        max-active: 8
 
-
-      
+  redis2:
+    client-name: redis2
+    database: 0
+    timeout: 3000
+    sentinel:
+      master: mymaster
+      nodes: 192.168.2.121:26381
+#      - 192.168.2.121:26382
+    lettuce:
+      pool:
+        max-active: 8
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

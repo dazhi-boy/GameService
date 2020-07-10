@@ -1,6 +1,9 @@
 package com.dazhi.game.base.controller;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,14 +26,21 @@ public class UserController extends BaseController<User> {
 		super.setiService(userService);
 	}
 
-    // @Autowired
-    // private StringRedisTemplate redisTemplate;
+    @Autowired
+    private RedisTemplate<String, String> strRedisTemplate;
+
+    @Resource(name = "redisTemplate2")
+    private RedisTemplate<String, String> strRedisTemplate2;
 
     @ApiOperation(value = "测试")
     @PostMapping("/test")
     public Result test() {
+        // strRedisTemplate.opsForValue().set("strKey", "zwqh");
+        System.out.println(strRedisTemplate.opsForValue().get("k1"));
         // String string = redisTemplate.opsForValue().get("k1");
         // System.out.println(string);
+        strRedisTemplate2.opsForValue().set("k2", "v2");
+        System.out.println(strRedisTemplate2.opsForValue().get("k2"));
         return Result.ok("OK");
     }
 }
